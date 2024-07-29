@@ -61,7 +61,7 @@ export class ProductManager {
             const productElement = document.createElement("div");
 
             // --test--
-            console.log(typeof product.addedDate)
+            //console.log(typeof product.addedDate)
 
             productElement.innerHTML = `
                 <section class="oneProduct">
@@ -124,7 +124,7 @@ export class ProductManager {
 
             if (event.target && (event.target as HTMLElement).classList.contains('edit-btn')) {
                 const productId = (event.target as HTMLElement).getAttribute('data-id')!;
-                console.log("id:",productId);
+                //console.log("id:",productId);
                 this.openEditForm(productId);
             }
             if (

@@ -28,9 +28,14 @@
                 <label for="productExpiry">Product expiry</label>
                 <input type="date" name= "productExpiry" id="productExpiry" placeholder="product expiry" required>
                 <button type="submit" id="AddProduct">add the product</button>
+
+                <span id="spanPrice">Price must be positive</span>
+                <span id="spanQuantity">Quantity must be positive</span>
+                <span id="spanRating">Rating must be between 1 and 5</span>
+                <span id="spanExpiration">Expiration date must be in the future</span>
             </form>
         </section>
-    
+
         <section id="edit">
             <form id="editForm" class="edit-form">
                 <h2>Edit a product</h2>

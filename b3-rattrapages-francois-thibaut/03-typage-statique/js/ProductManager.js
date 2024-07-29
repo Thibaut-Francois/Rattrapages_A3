@@ -40,7 +40,7 @@ export class ProductManager {
         this.products.forEach((product) => {
             const productElement = document.createElement("div");
             // --test--
-            console.log(typeof product.addedDate);
+            //console.log(typeof product.addedDate)
             productElement.innerHTML = `
                 <section class="oneProduct">
                     <div><b>Name:</b> ${product.name}</div>
@@ -92,7 +92,7 @@ export class ProductManager {
         this.productContainer.addEventListener("click", (event) => {
             if (event.target && event.target.classList.contains('edit-btn')) {
                 const productId = event.target.getAttribute('data-id');
-                console.log("id:", productId);
+                //console.log("id:",productId);
                 this.openEditForm(productId);
             }
             if (event.target &&
