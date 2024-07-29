@@ -29,21 +29,30 @@ if (form) {
             }
             return;
         }
-        else if (inputQuantityChoice < 0) {
+        else {
+            spanPrice.style.display = "none";
+        }
+        if (inputQuantityChoice < 0) {
             // console.log("Quantity must be positive");
             if (spanQuantity) {
                 spanQuantity.style.display = "block";
             }
             return;
         }
-        else if (inputRatingChoice < 0 || inputRatingChoice > 5) {
+        else {
+            spanQuantity.style.display = "none";
+        }
+        if (inputRatingChoice < 0 || inputRatingChoice > 5) {
             // console.log("Rating must be between 1 and 5");
             if (spanRating) {
                 spanRating.style.display = "block";
             }
             return;
         }
-        else if (inputExpirationDateChoice < new Date().toISOString().split('T')[0]) {
+        else {
+            spanRating.style.display = "none";
+        }
+        if (inputExpirationDateChoice < new Date().toISOString().split('T')[0]) {
             // console.log("Expiration date must be in the future");
             if (spanExpirationDate) {
                 spanExpirationDate.style.display = "block";
@@ -51,9 +60,6 @@ if (form) {
             }
         }
         else {
-            spanPrice.style.display = "none";
-            spanQuantity.style.display = "none";
-            spanRating.style.display = "none";
             spanExpirationDate.style.display = "none";
         }
         if (inputTitleChoice &&

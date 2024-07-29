@@ -36,32 +36,37 @@ if (form) {
             spanPrice.style.display = "block";
         }
         return;
+    }else{
+        spanPrice.style.display = "none";
+    }
 
-    } else if (inputQuantityChoice  < 0) {
+    if (inputQuantityChoice  < 0) {
         // console.log("Quantity must be positive");
         if (spanQuantity) {
             spanQuantity.style.display = "block";
         }
         return;
+    }else{
+        spanQuantity.style.display = "none";
+    }
 
-    } else if (inputRatingChoice < 0 || inputRatingChoice > 5) {
+    if (inputRatingChoice < 0 || inputRatingChoice > 5) {
         // console.log("Rating must be between 1 and 5");
         if (spanRating) {
             spanRating.style.display = "block";
         }
         return;
+    }else{
+        spanRating.style.display = "none";
+    }
 
-    } else if (inputExpirationDateChoice < new Date().toISOString().split('T')[0]) {
+    if (inputExpirationDateChoice < new Date().toISOString().split('T')[0]) {
         // console.log("Expiration date must be in the future");
         if (spanExpirationDate) {
             spanExpirationDate.style.display = "block";
         return;
         }
-
     }else{
-        spanPrice.style.display = "none";
-        spanQuantity.style.display = "none";
-        spanRating.style.display = "none";
         spanExpirationDate.style.display = "none";
     }
 

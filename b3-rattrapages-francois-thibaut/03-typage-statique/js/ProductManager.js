@@ -1,4 +1,8 @@
 import { Product } from "./Product.js";
+const spanPrice = document.getElementById("editSpanPrice");
+const spanQuantity = document.getElementById("editSpanQuantity");
+const spanRating = document.getElementById("editSpanRating");
+const spanExpirationDate = document.getElementById("editSpanExpiration");
 export class ProductManager {
     products;
     productContainer;
@@ -81,6 +85,46 @@ export class ProductManager {
                 const editedRating = editForm.elements.namedItem('editProductRating').value;
                 const editedImage = editForm.elements.namedItem('editProductImage').value;
                 const editedExpiryDate = editForm.elements.namedItem('editProductExpiry').value;
+                if (parseInt(editedPrice) < 0) {
+                    // console.log("Price must be positive");
+                    if (spanPrice) {
+                        spanPrice.style.display = "block";
+                    }
+                    return;
+                }
+                else {
+                    spanPrice.style.display = "none";
+                }
+                if (parseInt(editedQuantity) < 0) {
+                    // console.log("Quantity must be positive");
+                    if (spanQuantity) {
+                        spanQuantity.style.display = "block";
+                    }
+                    return;
+                }
+                else {
+                    spanQuantity.style.display = "none";
+                }
+                if (parseInt(editedRating) < 0 || parseInt(editedRating) > 5) {
+                    // console.log("Rating must be between 1 and 5");
+                    if (spanRating) {
+                        spanRating.style.display = "block";
+                    }
+                    return;
+                }
+                else {
+                    spanRating.style.display = "none";
+                }
+                if (editedExpiryDate < new Date().toISOString().split('T')[0]) {
+                    // console.log("Expiration date must be in the future");
+                    if (spanExpirationDate) {
+                        spanExpirationDate.style.display = "block";
+                        return;
+                    }
+                }
+                else {
+                    spanExpirationDate.style.display = "none";
+                }
                 this.editProduct(product.id, editedName, editedDescription, parseInt(editedPrice), parseInt(editedQuantity), parseInt(editedRating), true, editedImage, new Date(editedExpiryDate), product.addedDate);
                 editForm.style.display = 'none';
             });
