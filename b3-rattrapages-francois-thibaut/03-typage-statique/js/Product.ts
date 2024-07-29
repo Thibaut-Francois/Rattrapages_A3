@@ -12,14 +12,14 @@ export class Product implements IProduct {
     expiryDate: Date;
     addedDate: Date;
 
-    constructor(id: string, name: string, description: string, price:number, quantity:number, rating:number, available: boolean, image: string, expiryDate: Date, addedDate: Date) {
-        this.id = id;
+    constructor(name: string, description: string, price:number, quantity:number, rating:number, image: string, expiryDate: Date, addedDate: Date = new Date()) {
+        this.id = "Product_" + Date.now().toString();
         this.name = name;
         this.description = description;
         this.price = price;
         this.quantity = quantity;
         this.rating = rating;
-        this.available = available;
+        this.available = this.quantity > 0 ? true : false;
         this.image = image;
         this.expiryDate = expiryDate;
         this.addedDate = addedDate;
