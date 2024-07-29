@@ -24,7 +24,13 @@ if (form) {
     let inputImageChoice = data.get("productImage") as string;
     let inputExpirationDateChoice = data.get("productExpiry") as string;
 
-    console.log(inputImageChoice);
+    console.log(inputQuantityChoice);
+
+    if (inputQuantityChoice < 0) {
+        console.log("Quantity must be positive");
+        return;
+
+    }
 
     if (
         inputTitleChoice &&
