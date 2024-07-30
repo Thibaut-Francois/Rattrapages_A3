@@ -1,11 +1,11 @@
-import logo from './logo.svg';
 import './App.css';
+import ProductsScreen from '../pages/ProductsScreen';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+        {/* <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
@@ -16,9 +16,13 @@ function App() {
           rel="noopener noreferrer"
         >
           Learn React
-        </a>
+        </a> */}
+
+      <h2>Bienvenue chez Picard</h2>
+      <a href={ProductsScreen}>Voir nos produits</a>
+
       </header>
-    </div>
+    </div> 
   );
 }
 
