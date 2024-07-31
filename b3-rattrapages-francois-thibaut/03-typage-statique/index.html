@@ -3,11 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Picard Script</title>
     <link rel="stylesheet" href="./css/style.css">
+
+    <link rel="icon" type="image/x-icon" href="assets/logoPicard.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>Picard</h1>
+    <header>
+        <img src="assets/picard.png" alt="logo picard">
+    </header>
+    
 
     <main>
         <section id="product-creation">
@@ -27,7 +36,7 @@
                 <input type="text" name= "productImage" id="productImage" placeholder="url image" required>
                 <label for="productExpiry">Product expiry</label>
                 <input type="date" name= "productExpiry" id="productExpiry" placeholder="product expiry" required>
-                <button type="submit" id="AddProduct">add the product</button>
+                <button type="submit" id="AddProduct">Add the product</button>
 
                 <span id="spanPrice">Price must be positive</span>
                 <span id="spanQuantity">Quantity must be positive</span>

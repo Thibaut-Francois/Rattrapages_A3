@@ -49,16 +49,17 @@ export class ProductManager {
                 <section class="oneProduct">
                     <div><b>Name:</b> ${product.name}</div>
                     <div><b>Description:</b> ${product.description}</div>
-                    <div><b>Price:</b> ${product.price}$</div>
+                    <div><b>Price:</b> ${product.price}€</div>
                     <div><b>Quantity:</b> ${product.quantity}</div>
                     <div><b>Rating:</b> ${product.rating}/5</div>
                     <div><b>This product is ${product.available == true ? "available" : "NOT available"}</b></div>
                     <div> <img style="height:100px;" src="${product.image}" /> </div>
                     <div><b>Expiry Date:</b> ${product.expiryDate.toLocaleDateString()}</div>
                     <div><b>Added Date:</b> ${product.addedDate.toLocaleDateString()}</div>
-
-                    <button class="remove-btn" data-id="${product.id}">delete</button>
-                    <button class="edit-btn" data-id="${product.id}">edit</button>
+                    <div class="twoButtons">
+                        <button class="remove-btn" data-id="${product.id}">delete</button>
+                        <button class="edit-btn" data-id="${product.id}">edit</button>
+                    </div>
                 </section>
             `;
             this.productContainer.appendChild(productElement);
