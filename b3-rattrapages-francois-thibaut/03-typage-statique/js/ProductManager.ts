@@ -79,9 +79,11 @@ export class ProductManager {
                     <div> <img style="height:100px;" src="${product.image}" /> </div>
                     <div><b>Expiry Date:</b> ${product.expiryDate.toLocaleDateString()}</div>
                     <div><b>Added Date:</b> ${product.addedDate.toLocaleDateString()}</div>
-
-                    <button class="remove-btn" data-id="${product.id}">delete</button>
-                    <button class="edit-btn" data-id="${product.id}">edit</button>
+$
+                    <div class="twoButtons">
+                        <button class="remove-btn" data-id="${product.id}">delete</button>
+                        <button class="edit-btn" data-id="${product.id}">edit</button>
+                    </div>
                 </section>
             `;
             this.productContainer.appendChild(productElement);

@@ -11,6 +11,17 @@ span{
     color: red;
 }
 
+h2{
+    text-align: center;
+}
+
+button{
+    margin: 0 auto;
+    padding: 10px 20px;
+    width: auto;
+    border-radius: 10px;
+}
+
 #product-creation{
     width: 50%;
     margin: 25px;
@@ -25,6 +36,9 @@ span{
 #editForm {
     display:none;
     flex-direction: column;
+    background-color: rgb(173, 230, 216);
+    padding: 50px;
+    border-radius: 15px;
 }
 
 #product{
@@ -33,6 +47,42 @@ span{
     grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
+#product-creation{
+    background-color: #ADD8E6;
+    padding: 50px;
+    border-radius: 15px;
+}
+
+.remove-btn{
+    color: red;
+    background-color: white;
+    border-color: red;
+}
+
+.remove-btn:hover{
+    color: white;
+    background-color: red;
+    border-color: white;
+}
+
+.edit-btn{
+    color: blue;
+    background-color: white;
+    border-color: blue;
+}
+
+.edit-btn:hover{
+    color: white;
+    background-color: blue;
+    border-color: white;
+}
+
 .oneProduct {
     margin: 30px 0;
+}
+
+.twoButtons{
+    background-color: red;
+    display: flex;
+    justify-content: space-between;
 }
