@@ -1,5 +1,5 @@
 <template>
-    <RouterLink to="/">Back to products</RouterLink>
+    <RouterLink to="/" class="back_btn">Back to products</RouterLink>
     <div>
         <OneProduct :title="Product.title" :slug="Product.slug" :content="Product.description" :price="Product.price" :quantity="Product.quantity" :rating="Product.rating" :available="Product.available" :imagePath="Product.imagePath" :expirationDate="Product.expirationDate" :addDate="Product.addDate" />
     </div>
@@ -27,5 +27,20 @@ export default {
 </script>
 
 <style scoped>
+.back_btn{
+    color: green;
+    background-color: white;
+    border: solid green 2px;
+    text-decoration: none;
+    margin-top: 45px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+}
 
+.back_btn:hover{
+    color: white;
+    background-color: green;
+    border-color: white;
+}
 </style>

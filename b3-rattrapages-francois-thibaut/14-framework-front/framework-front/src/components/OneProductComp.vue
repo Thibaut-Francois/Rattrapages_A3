@@ -1,22 +1,20 @@
 <template>
     <div class="container product">
-        <h2>{{ title }}</h2>
+        <h1>{{ title }}</h1>
         <input type="hidden" id="slug" name="slug" :value="slug">
         <section>
             <div>
                 <img :src="imagePath" :alt="'image of ' + title">
             </div>
             <div>   
-                <ul>
-                    <li>About our product: {{ content }}</li>
-                    <li>Cost: {{ price }} $</li>
-                    <li>In Stock: <input type="number" id="quantity" name="quantity" min="0" :placeholder="quantity"></li>
-                    <ButtonComp @click="changeQuantity" text="Change Quantity"/>
-                    <li>Rated: <input type="number" id="rating" name="rating" max="5" min="0" :placeholder="rating">/5</li>
-                    <ButtonComp @click="changeRating" text="Change Rating"/>
-                    <li>Expiration Date: {{ expirationDate }}</li>
-                    <li>Added: {{ addDate }}</li>
-                </ul>
+                <div>Description: {{ content }}</div>
+                <div>Price: {{ price }}€</div>
+                <div>Quantity: <input type="number" id="quantity" name="quantity" min="0" :placeholder="quantity"></div>
+                <ButtonComp @click="changeQuantity" text="Change Quantity"/>
+                <div>Rating: <input type="number" id="rating" name="rating" max="5" min="0" :placeholder="rating">/5</div>
+                <ButtonComp @click="changeRating" text="Change Rating"/>
+                <div>Expiration Date: {{ expirationDate }}</div>
+                <div>Added Date: {{ addDate }}</div>
             </div>
         </section>
     </div>
