@@ -1,21 +1,23 @@
 <template>
-    <h1>All Products</h1>
+    <h1>Picard</h1>
     <section>
-        <div>
-            <label for="filter">Filter by category :   </label>
-            <select id="filter" name="filter" @click="filter">
-                <option value="0"></option>
-                <option value="1">Viande et Poisson</option>
-                <option value="2">Légumes et Fruits</option>
-                <option value="3">Desserts</option>
-            </select>
-        </div>
         <div>
             <FormComp/>
         </div>
+        <div class="filterChoice">
+            <div>
+                <label for="filter">Filter by category :   </label>
+                <select id="filter" name="filter" @click="filter">
+                    <option value="noFilter">sans filtres</option>
+                    <option value="Viande_et_Poisson">Viande et Poisson</option>
+                    <option value="Légumes_et_Fruits">Légumes et Fruits</option>
+                    <option value="Desserts">Desserts</option>
+                </select>
+            </div>
+        </div>
     </section>
     <div class="bigContainer">
-        <ProductFull v-for="product in Products" :key="product.slug" :title="product.title" :category="product.category" :slug="product.slug" :price="product.price" :quantity="product.quantity" :stars="product.stars" :available="product.available" :imagePath="product.imagePath" :expiarationDate="product.expirationDate" :addDate="product.addDate"/>
+        <ProductFull v-for="product in Products" :key="product.slug" :title="product.title" :category="product.category" :slug="product.slug" :price="product.price" :quantity="product.quantity" :rating="product.stars" :available="product.available" :imagePath="product.imagePath" :expiarationDate="product.expirationDate" :addDate="product.addDate"/>
     </div>
     
 </template>
@@ -38,7 +40,7 @@ export default {
             let products = document.querySelectorAll('.product');
 
             products.forEach(product => {
-                if (filter == 0) {
+                if (filter === 'noFilter') {
                     product.style.display = 'block';
                 } else if (product.classList.contains(filter)) {
                     product.style.display = 'block';
@@ -57,6 +59,17 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
+.filterChoice{
+    margin: 15px 15px;
+    padding: 15px;
+    background-color: #ADD8E6;
+    width:24ll%;
+    border-radius: 15px;
+}
 
+.filterChoice{
+    display: flex;
+    justify-content: space-around;
+}
 </style>

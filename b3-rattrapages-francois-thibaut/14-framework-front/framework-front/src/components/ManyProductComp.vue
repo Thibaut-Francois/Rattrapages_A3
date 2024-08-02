@@ -7,12 +7,12 @@
             </div>
             <div>   
                 <ul>
-                    <li>Cost:{{ price }} $</li>
-                    <li>Rated: {{ stars }}/5</li>
-                    <li>{{ available ? `Available (${quantity} left)` : 'Out of Stock' }}</li>
-                    <li>Expiration Date: {{ expiarationDate }}</li>
-                    <li>Added: {{ addDate }}</li>
-                    <li><router-link :to="'/product/:'+slug">See more...</router-link></li>
+                    <div>Price:{{ price }} $</div>
+                    <div>Rating: {{ rating }}/5</div>
+                    <div>{{ available ? `This product is available (${quantity} left)` : 'This product is NOT available' }}</div>
+                    <div>Expiration Date: {{ expiarationDate }}</div>
+                    <div>Added Date: {{ addDate }}</div>
+                    <div><router-link :to="'/product/:'+slug">See more...</router-link></div>
                 </ul>
                 <ButtonComp :action="deleteProduct" text="Delete"/>
             </div>
@@ -53,7 +53,7 @@ export default {
             type: Number,
             required: true
         },
-        stars: {
+        rating: {
             type: Number,
             required: true
         },

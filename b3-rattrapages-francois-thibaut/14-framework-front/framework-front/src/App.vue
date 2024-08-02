@@ -8,8 +8,13 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
 * {
   box-sizing: border-box;
+}
+
+@font-face {
+    font-family: theFont;
+    src: url('~@/assets/font/Sarabun/Sarabun-Regular.ttf');
 }
 </style>

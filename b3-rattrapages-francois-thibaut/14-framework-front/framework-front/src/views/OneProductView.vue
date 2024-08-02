@@ -1,7 +1,7 @@
 <template>
     <RouterLink to="/">Back to products</RouterLink>
     <div>
-        <ProductSingle :title="Product.title" :slug="Product.slug" :content="Product.description" :price="Product.price" :quantity="Product.quantity" :stars="Product.stars" :available="Product.available" :imagePath="Product.imagePath" :expirationDate="Product.expirationDate" :addDate="Product.addDate" />
+        <ProductSingle :title="Product.title" :slug="Product.slug" :content="Product.description" :price="Product.price" :quantity="Product.quantity" :rating="Product.rating" :available="Product.available" :imagePath="Product.imagePath" :expirationDate="Product.expirationDate" :addDate="Product.addDate" />
     </div>
 </template>
 

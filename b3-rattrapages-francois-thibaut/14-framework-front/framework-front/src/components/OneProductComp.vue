@@ -12,8 +12,8 @@
                     <li>Cost: {{ price }} $</li>
                     <li>In Stock: <input type="number" id="quantity" name="quantity" min="0" :placeholder="quantity"></li>
                     <ButtonComp @click="changeQuantity" text="Change Quantity"/>
-                    <li>Rated: <input type="number" id="stars" name="stars" max="5" min="0" :placeholder="stars">/5</li>
-                    <ButtonComp @click="changeStars" text="Change Stars"/>
+                    <li>Rated: <input type="number" id="rating" name="rating" max="5" min="0" :placeholder="rating">/5</li>
+                    <ButtonComp @click="changeRating" text="Change Rating"/>
                     <li>Expiration Date: {{ expirationDate }}</li>
                     <li>Added: {{ addDate }}</li>
                 </ul>
@@ -32,17 +32,17 @@ export default {
         ButtonComp
     },
     methods: {
-        ...mapMutations(['updateQuantity', 'updateStars']),
-        changeStars() {
+        ...mapMutations(['updateQuantity', 'updateRating']),
+        changeRating() {
 
-            let stars = document.getElementById('stars').value;
+            let rating = document.getElementById('rating').value;
 
-            if (stars < 0 || stars > 5) {
-                alert('Stars must be between 0 and 5');
+            if (rating < 0 || rating > 5) {
+                alert('rating must be between 0 and 5');
                 return;
             }
 
-            this.updateStars({ Slug: document.getElementById('slug').value, stars: stars });
+            this.updateRating({ Slug: document.getElementById('slug').value, rating: rating });
         },
         changeQuantity() {
 
@@ -77,7 +77,7 @@ export default {
             type: Number,
             required: true
         },
-        stars: {
+        rating: {
             type: Number,
             required: true
         },

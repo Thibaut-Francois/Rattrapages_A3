@@ -1,38 +1,47 @@
 <template>
-    <ButtonComp @click="showForm" text="Add a product"/>
     <div class="box">
         <div class="form">
-            <fieldset>
-                <legend> Add a product : </legend>
+                <h2> Add a product</h2>
 
-                <label for="title">Title :</label>
-                <input type="text" id="title" name="title" required><br><br>
-                <label for="content">Content :</label>
-                <input type="text" id="content" name="content" required><br><br>
-                <label for="price">Price :</label>
-                <input type="number" id="price" name="price" required><br><br>
-                <label for="quantity">Quantity :</label>
-                <input type="number" id="quantity" name="quantity" required min="0"><br><br>
-                <label for="stars">Stars :</label>
-                <input type="number" id="stars" name="stars" required max="5" min="0"><br><br>
-                <label for="available">Available :</label>
-                <input type="checkbox" id="available" name="available" required><br><br>
-                <label for="imagePath">Image Path :</label>
-                <input type="text" id="imagePath" name="imagePath" required><br><br>
-                <label for="expirationDate">Expiration Date :</label>
-                <input type="date" id="expirationDate" name="expirationDate" required><br><br>
-                <label for="category">Category :</label>
-                <select id="category" name="category" required>
-                    <option value="0"></option>
-                    <option value="1">Category 1</option>
-                    <option value="2">Category 2</option>
-                    <option value="3">Category 3</option>
-                </select><br><br>
-                <ButtonComp @click="addProducts" text="Validate"/>
-            </fieldset>
+                <div>
+                    <label for="title">Product name: </label>
+                    <input type="text" id="title" name="title" placeholder="product name" required>
+
+                    <label for="content">Product description: </label>
+                    <input type="text" id="content" name="content" placeholder="product desc" required>
+
+                    <label for="price">Product Price: </label>
+                    <input type="number" id="price" name="price" placeholder="product price" required>
+
+                    <label for="quantity">Product Quantity: </label>
+                    <input type="number" id="quantity" name="quantity" placeholder="product quantity" required min="0">
+
+                    <label for="rating">Product rating: </label>
+                    <input type="number" id="rating" name="rating" placeholder="product rating" required max="5" min="0">
+
+                    <div>
+                        <label for="available">Available: </label>
+                        <input type="checkbox" id="available" name="available" required>
+                    </div>
+
+                    <label for="imagePath">Product image: </label>
+                    <input type="text" id="imagePath" name="imagePath" placeholder="url image" required>
+
+                    <label for="expirationDate">Product expiry: </label>
+                    <input type="date" id="expirationDate" name="expirationDate" required>
+
+                    <label for="category">Category: </label>
+                    <select id="category" name="category" required>
+                        <option value="noFilter"></option>
+                        <option value="Viande_et_Poisson">Viande et Poisson</option>
+                        <option value="Légumes_et_Fruits">Légumes et Fruits</option>
+                        <option value="Desserts">Desserts</option>
+                    </select>
+                </div>
+
+                <ButtonComp @click="addProducts" class="btnSubmit" text="Add the product"/>
         </div>
     </div>
-    <div @click="hideForm" class="overlay"></div>
 </template>
 
 <script>
@@ -44,21 +53,13 @@ export default {
         ButtonComp
     },
     methods: {
-        hideForm() {
-            document.querySelector('.overlay').style.display = 'none';
-            document.querySelector('.box').style.display = 'none';
-        },
-        showForm() {
-            document.querySelector('.overlay').style.display = 'block';
-            document.querySelector('.box').style.display = 'block';
-        },
         addProducts() {
             let title = document.getElementById('title').value;
             let slug = title.toLowerCase().replace(/ /g, '-');
             let content = document.getElementById('content').value;
             let price = document.getElementById('price').value;
             let quantity = document.getElementById('quantity').value;
-            let stars = document.getElementById('stars').value;
+            let rating = document.getElementById('rating').value;
             let available = document.getElementById('available').checked;
             let imagePath = document.getElementById('imagePath').value;
             let expirationDate = document.getElementById('expirationDate').value;
@@ -66,13 +67,13 @@ export default {
             addDate = addDate.slice(0, 10);
             let category = document.getElementById('category').value;
 
-            if (!title || !content || !price || !quantity || !stars || !imagePath || !expirationDate) {
+            if (!title || !content || !price || !quantity || !rating || !imagePath || !expirationDate) {
                 alert('Please fill all the fields');
                 return;
             }
 
-            if (isNaN(price) || isNaN(quantity) || isNaN(stars)) {
-                alert('Price, quantity and stars must be numbers');
+            if (isNaN(price) || isNaN(quantity) || isNaN(rating)) {
+                alert('Price, quantity and rating must be numbers');
                 return;
             }
             
@@ -92,8 +93,8 @@ export default {
                 available = true;
             }
 
-            if (stars < 0 || stars > 5) {
-                alert('Stars must be between 0 and 5');
+            if (rating < 0 || rating > 5) {
+                alert('rating must be between 0 and 5');
                 return;
             }
 
@@ -103,7 +104,7 @@ export default {
                 description: content,
                 price: price,
                 quantity: quantity,
-                stars: stars,
+                rating: rating,
                 available: available,
                 imagePath: imagePath,
                 expirationDate: expirationDate,
@@ -111,7 +112,6 @@ export default {
                 category: category
             });
 
-            this.hideForm();
         }
     },
     
@@ -119,5 +119,34 @@ export default {
 </script>
 
 <style scoped>
+input{
+    margin-bottom: 15px;
+}
+
+h2{
+    text-align: center;
+}
+
+.box{
+    width: 50%;
+    margin: 0 auto;
+}
+
+.form{
+    background-color: rgb(173, 230, 216);
+    padding: 25px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form>div{
+    display: flex;
+    flex-direction: column;
+}
+
+.btnSubmit{
+    margin-top: 15px;
+}
 
 </style>
