@@ -17,7 +17,7 @@ export default createStore({
             category: 'Viande_et_Poisson'
         },
         {
-            title: 'Filets de merlan, panure croustillante,4 à 6 filets',
+            title: 'Filets de merlan, panure croustillante, 4 à 6 filets',
             slug: 'filets-de-merlan',
             description: 'Le merlan fait une entrée très remarquée dans la famille des filets de poissons panés Picard. Sous sa panure légère et croustillante à souhait, vous découvrez sa chair moelleuse et son goût délicat dès la première bouchée. Simplement doré au four ou à la poêle, quelques gouttes de citron suffisent pour révéler le meilleur de sa saveur. Suite aux difficultés d’approvisionnement sur certaines matières premières liées à la guerre en Ukraine, des changements ont été apportés dans la recette du produit.',
             price: 8,
