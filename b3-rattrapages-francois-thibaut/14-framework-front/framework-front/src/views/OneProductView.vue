@@ -1,6 +1,7 @@
 <template>
-    <RouterLink to="/" class="back_btn">Back to products</RouterLink>
-    <div>
+    <div style="margin-top: 40px;">
+        <RouterLink to="/" class="back_btn">Back to products</RouterLink>
+
         <OneProduct :title="Product.title" :slug="Product.slug" :content="Product.description" :price="Product.price" :quantity="Product.quantity" :rating="Product.rating" :available="Product.available" :imagePath="Product.imagePath" :expirationDate="Product.expirationDate" :addDate="Product.addDate" />
     </div>
 </template>
@@ -32,6 +33,7 @@ export default {
     background-color: white;
     border: solid green 2px;
     text-decoration: none;
+    margin: 15px;
     margin-top: 45px;
     padding: 10px 20px;
     border-radius: 10px;

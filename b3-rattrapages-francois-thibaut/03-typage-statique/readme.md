@@ -26,6 +26,7 @@ Mon application permet créer et modifier des produits. Ces produits contiennent
     -une date de création
 
 vidéo loom
+https://www.loom.com/share/d8b7b9c2cfa34d89bedb383e56778596?sid=ca9b15b7-1334-4df4-b6bd-22f91ed42924
 
 Je me suis aidé de quelques site web tel que :
     -https://stackoverflow.com/

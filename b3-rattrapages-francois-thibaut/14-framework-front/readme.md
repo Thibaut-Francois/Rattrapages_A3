@@ -28,4 +28,5 @@ Je me suis aidé de quelques site web tel que :
     -https://developer.mozilla.org/en-US/
     -https://www.w3schools.com/
     -https://vuejs.org/guide/quick-start
+    https://www.picard.fr/produits/mochis-framboise-mangue-000000000000082340.html
 J'ai utilisé c'est site principalement pour rechercher dans la documentation de JavaScript et de css.
