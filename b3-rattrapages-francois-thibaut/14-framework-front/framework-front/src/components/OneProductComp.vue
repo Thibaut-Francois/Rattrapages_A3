@@ -1,22 +1,24 @@
 <template>
-    <div class="container product">
-        <h1>{{ title }}</h1>
+    <div class="oneProduct product">
         <input type="hidden" id="slug" name="slug" :value="slug">
-        <section>
-            <div>
-                <img :src="imagePath" :alt="'image of ' + title">
-            </div>
-            <div>   
-                <div>Description: {{ content }}</div>
-                <div>Price: {{ price }}€</div>
+        <div class="leftSide">
+            <img :src="imagePath" :alt="'image of ' + title" class="oneImg">
+        </div>
+        <div class="rightSide">
+            <h1>{{ title }}</h1>
+            <div>Description: {{ content }}</div>
+            <div>Price: {{ price }}€</div>
+            <div class="btnEdit">
                 <div>Quantity: <input type="number" id="quantity" name="quantity" min="0" :placeholder="quantity"></div>
                 <ButtonComp @click="changeQuantity" text="Change Quantity"/>
+            </div>
+            <div class="btnEdit">
                 <div>Rating: <input type="number" id="rating" name="rating" max="5" min="0" :placeholder="rating">/5</div>
                 <ButtonComp @click="changeRating" text="Change Rating"/>
-                <div>Expiration Date: {{ expirationDate }}</div>
-                <div>Added Date: {{ addDate }}</div>
             </div>
-        </section>
+            <div>Expiration Date: {{ expirationDate }}</div>
+            <div>Added Date: {{ addDate }}</div>
+        </div>
     </div>
 </template>
 
@@ -97,8 +99,38 @@ export default {
 </script>
 
 <style>
-.container{
+.oneProduct{
+    width: 100%;
     margin-bottom: 50px;
+    display: flex;
+    flex-direction: row;
+}
+
+.leftSide{
+    width: 50%;
+    margin: 45px;
+}
+
+.rightSide{
+    width: 50%;
+    margin: 45px;
+}
+
+.rightSide>div{
+    margin-bottom: 10px;
+}
+
+.oneImg{
+    width: 100%;
+}
+
+.btnEdit{
+    display: flex;
+    flex-direction: row;
+}
+
+.btnEdit>button{
+    margin: 0 30px;
 }
 
 </style>

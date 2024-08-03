@@ -9,3 +9,11 @@
   font-style: normal;
   /* color: black; */
 }
+
+h1{
+  font-weight: 800;
+}
+
+h2{
+  font-weight: 600;
+}

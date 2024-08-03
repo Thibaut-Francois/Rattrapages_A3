@@ -85,7 +85,8 @@ export default {
 
 <style scoped>
 .container{
-    margin: 30px;
+    width: 30%;
+    margin-bottom: 50px;
     padding: 20px;
     color: #0814ac !important;
     border: solid 3px #0814ac ;
