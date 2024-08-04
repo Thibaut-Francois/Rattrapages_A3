@@ -22,6 +22,7 @@ Mon application permet créer et modifier des produits. Ces produits contiennent
     -une catégorie
 
 vidéo loom
+https://www.loom.com/share/4445a0039c2f43feaefd93c1a2608838?sid=5423f676-e272-4d7f-881b-17e6d1048612
 
 Je me suis aidé de quelques site web tel que :
     -https://stackoverflow.com/

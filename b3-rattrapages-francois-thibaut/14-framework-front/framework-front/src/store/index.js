@@ -62,7 +62,7 @@ export default createStore({
             price: 5,
             quantity: 0,
             rating: 3,
-            available: true,
+            available: false,
             imagePath: 'https://www.picard.fr/dw/image/v2/AAHV_PRD/on/demandware.static/-/Sites-catalog-picard/default/dw4575458f/produits/00000000000000082815_E.jpg?sw=672&sh=392&q=30',
             expirationDate: '2025-08-04',
             addDate: '2024-08-04',

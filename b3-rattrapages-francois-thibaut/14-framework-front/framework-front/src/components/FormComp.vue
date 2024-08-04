@@ -53,9 +53,9 @@ export default {
         ButtonComp
     },
     methods: {
-        addProducts() {
+        addProducts() { 
             let title = document.getElementById('title').value;
-            let slug = title.toLowerCase().replace(/ /g, '-');
+            let slug = title.toLowerCase().replace(/ /g, '-')+ Date.now().toString();
             let content = document.getElementById('content').value;
             let price = document.getElementById('price').value;
             let quantity = document.getElementById('quantity').value;
@@ -84,6 +84,11 @@ export default {
 
             if (quantity.toString().includes('-')) {
                 alert("Quantity can't be negative");
+                return;
+            }
+
+            if (expirationDate < new Date().toISOString().split('T')[0]) {
+                alert('Expiration date must be in the future');
                 return;
             }
 
